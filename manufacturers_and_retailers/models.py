@@ -35,7 +35,7 @@ class Node(models.Model):
     node_level = models.IntegerField(blank=True, verbose_name='Уровень звена')
     contacts = models.ForeignKey(Contacts, on_delete=models.CASCADE, verbose_name='Контакты')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
-    debt = models.IntegerField(default=0, verbose_name='Долг перед поставщиком')
+    debt = models.DecimalField(max_digits=15, decimal_places=2, default=0, verbose_name='Долг перед поставщиком')
     supplier = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE, verbose_name='Поставщик')
 
     def save(self, *args, **kwargs):
