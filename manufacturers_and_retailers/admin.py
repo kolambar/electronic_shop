@@ -20,7 +20,7 @@ class NodeAdmin(admin.ModelAdmin):
     list_filter = ('kind_of_node', 'node_level', 'contacts__country', 'contacts__city', )
     search_fields = ('name', )
 
-    actions = ['clear_debt']
+    actions = ('clear_debt', )
 
     def clear_debt(self, request, queryset):
         # Обновление всех выбранных объектов, устанавливая задолженность в 0
