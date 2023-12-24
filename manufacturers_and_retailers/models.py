@@ -16,6 +16,10 @@ class Contacts(models.Model):
     def __str__(self):
         return f'{self.country} {self.city} {self.street} {self.house_number} - {self.email}'
 
+    class Meta:
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
+
 
 class Node(models.Model):
     """
@@ -41,6 +45,10 @@ class Node(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Звено'
+        verbose_name_plural = 'Звенья сети'
+
 
 class Product(models.Model):
     """
@@ -53,3 +61,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
